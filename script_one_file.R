@@ -1,3 +1,4 @@
+library(bioimagetools)
 library(nucim)
 # choose RGB file
 img = readTIF(file.choose())
@@ -22,4 +23,12 @@ blue = img[,,3,]
 mask = dapimask(blue, c(x,y,z), thresh="auto")
 
 # classify the DAPI channel
-classes = classify.single(blue, mask, 7, beta=0.1, z=zscale)
+classes = classify.single(blue, mask, 7, z=zscale)
+
+# count voxel per class
+counts <- table.n(classes, 7)
+
+# percentages
+perc <- print(counts/sum(counts)*100, 1)
+
+barplot(perc, names.arg=1:7, xlab="DAPI intensity class", ylab="percentage")
