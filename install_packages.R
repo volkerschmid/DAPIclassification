@@ -1,4 +1,3 @@
-install.packages("devtools")
-library(devtools)
-install_github("volkerschmid/bioimagetools")
-install_bitbucket("volkerschmid/nucim")
+source("https://bioconductor.org/biocLite.R")
+biocLite("EBImage")
+install.packages("nucim")
