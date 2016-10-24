@@ -10,12 +10,12 @@ folder = substr(folder,1,f[length(f)])
 nr.cores=ifelse(.Platform$OS.type=="windows", 1, 4)
 
 # split channels
-splitchannels(folder, rgb.folder="./", cores=nr.cores)
+splitchannels.folder(folder, rgb.folder="./", cores=nr.cores)
 
 # masks
 dapimask.folder(folder, cores=nr.cores)
 
 # classification 
-classify(folder, 7)
+classify.folder(folder, 7, cores=nr.cores)
 
 # results will be in folders "class7" und "class7-n"
