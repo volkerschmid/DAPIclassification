@@ -1,5 +1,5 @@
 setRepositories(ind=c(1,2))
 install.packages(c("EBImage","devtools"))
 library("devtools")
-install_github("volkerschmid/bioimagetools")
-install_bitbucket("volkerschmid/nucim")
+install_github("bioimaginggroup/bioimagetools")
+install_bitbucket("bioimaginggroup/nucim")
